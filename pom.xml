@@ -23,13 +23,17 @@
         <otel.version>1.17.0</otel.version>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <pipelinr-version>0.5</pipelinr-version>
     </properties>
 
     <modules>
         <module>common-domain</module>
+        <module>event-handling</module>
         <module>customer-service</module>
         <module>inventory-service</module>
         <module>order-service</module>
+        <module>shop-service</module>
+        <module>analytics-service</module>
         <module>gateway-service</module>
         <module>e2e-service</module>
     </modules>
@@ -43,7 +47,17 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>net.greeta.stock</groupId>
+                <artifactId>event-handling</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>an.awesome</groupId>
+                <artifactId>pipelinr</artifactId>
+                <version>${pipelinr-version}</version>
+            </dependency>
 
 
             <dependency>
@@ -153,5 +167,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <name>jcenter</name>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+    </repositories>    
 
 </project>
